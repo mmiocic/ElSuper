@@ -1,0 +1,34 @@
+This text file just has some git commands you should know and when to use it:
+
+git pull --> use this to pull the latest code from the repo to your local dir. Normally you want to be on the master branch when you do this
+git branch --> this just tells you what brach you are on
+git checkout master --> switches to master branch. Changes must be saved and commited first. You can use checkout to switch to any branch not just master
+git branch <branchname> --> creates a branch with all files copied from the branch it was created from then checks out to it (dont put < > for names)
+git commit -m " " -->commits any changes made. You MUST put some commit message in quotes
+git push --> pushes the commits on the branch to the repo. Think of this like submiting your changes to the branch so make sure code works before doing this
+git status --> shows the status of files and lets you know if there are any changes
+git merge <branch> --> Be careful here, merge conflicts may occur. This merges any changes on <branch> onto the branch that you are currently on
+git add . --> this "Stages" all the changed files making them ready for commit. Usually it is bad practice to "add ." which means add all changed files so you 	can "git add <filename>" for specific files. For our purposes we should be fine using the add all command
+
+
+Those I think are the most important ones, there is a lot more that Google can provide info.
+
+
+Here is an example of steps when some of these should be performed:
+	1. Getting ready and setting up coding environment with whatever IDE
+		-on cmd line go to ElSuper git directory and do these:
+		-git checkout master
+		-git pull
+		-git checkout <yourbranch>
+		-git merge master
+		-now your branch is up-to-date with the latest code and ready for more development
+		
+	2. Coding and saving changes
+		-lets say you made changes to some files that you want to be added to the project. Make sure the files are saved and do these commands:
+		-git add .
+		-git commit -m "Adding new method to do this" <put any relevant commit message here>
+		-!!!WARNING!!! Never commit or push to master branch! Do it to your branch then it will be merged to master
+		-git push
+		-at any point in this process you can do a "git status" and it would tell you what you need to do
+		-once your changes are pushed I think it would be best to do a code review just so both of us are on the same page. then we will merge it
+		
