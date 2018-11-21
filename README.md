@@ -31,9 +31,9 @@ Steps to setup project locally:
       
       --finally go to the git directory, inside the angular project and run "ng serve -o" and you will see the project
       
-      --<I will include the build step when it is ready>
+      --{I will include the build step when it is ready}
   
   
   3. Startup Backend + Server
   
-      --<TBD which language and framework to use so will update later>
+      --{TBD which language and framework to use so will update later}
