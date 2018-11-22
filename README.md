@@ -25,9 +25,9 @@ Steps to setup project locally:
       
       --now you should have the npm command available and you can check by doing "npm -v"
       
-      --next, install a specific version of Angular so run the command "npm install -g @angular/cli@6.1.1"
+      --next, install a specific version of Angular so run the command "npm install -g @angular/cli@6.2.7"
       
-      --check that it is properly install using "ng version" and you should see the CLI logo as well as 6.1.1 in there
+      --check that it is properly install using "ng version" and you should see the CLI logo as well as 6.2.7 in there
       
       --finally go to the git directory, inside the angular project and run "ng serve -o" and you will see the project
       
