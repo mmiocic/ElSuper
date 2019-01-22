@@ -37,7 +37,7 @@ Nativescript I think is the framework we should use for mobile. It can be run ve
 -->this framework is cool (i played with it a bit) but still idk much about it, heres a link to get started if interested
 https://docs.nativescript.org/start/quick-setup 
 
--->you would also need to download Nativescript Playground and Nativescript Preview to test on device
+-->you would also need to download Nativescript Playground and Nativescript Preview apps to test on device
   
 # Startup Backend + Server
   
