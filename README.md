@@ -34,6 +34,10 @@ Steps to setup project locally:
   
 # Nativescript (frontend mobile)
 Nativescript I think is the framework we should use for mobile. It can be run very similarly to Angular so code can be shared but still more research is required
+-->this framework is cool (i played with it a bit) but still idk much about it, heres a link to get started if interested
+https://docs.nativescript.org/start/quick-setup 
+
+-->you would also need to download Nativescript Playground and Nativescript Preview to test on device
   
 # Startup Backend + Server
   
