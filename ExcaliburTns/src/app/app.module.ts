@@ -5,6 +5,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { Page2Component } from './page2/page2.component';
 import { HomeComponent } from "./home/home.component";
+import {PanCompComponent} from "./pan-comp/pan-comp.component";
 
 @NgModule({
     bootstrap: [
@@ -17,7 +18,8 @@ import { HomeComponent } from "./home/home.component";
     declarations: [
         AppComponent,
         HomeComponent,
-        Page2Component
+        Page2Component,
+        PanCompComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA
