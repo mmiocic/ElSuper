@@ -1,14 +1,29 @@
 <ActionBar class="action-bar">
-    <Label class="action-bar-title" text="Can I get a HOOOYYAAAA"></Label>
+    <Label class="action-bar-title" text="Water Polo Stats App (name TBD)"></Label>
 </ActionBar>
 
 
 
 <StackLayout class="page">
-    <!-- Add your page content here -->
+   
     <Label text="Welcome to my app!"></Label>
     <Button text="Go to Page2" [nsRouterLink]="['/page2']"></Button>
-    <Image src="https://user-images.githubusercontent.com/544280/42960643-66d498ac-8b5a-11e8-8946-7224eefea6a5.jpg" 
-    ></Image>
+    <!-- <Image src="https://user-images.githubusercontent.com/544280/42960643-66d498ac-8b5a-11e8-8946-7224eefea6a5.jpg" >
+    </Image> -->
     
-</StackLayout>
+</StackLayout> 
+
+
+    <!-- <AbsoluteLayout width="250" height="250" backgroundColor="lightgray">
+        <Label text="Team" left="20" top="20" width="90" height="90" backgroundColor="red"></Label>
+        <Label text="Scoresheet" left="120" top="20" width="90" height="90" backgroundColor="green"></Label>
+        <Label text="Analytics" left="110" top="120" width="90" height="90" backgroundColor="blue"></Label>
+        <Label text="Julian \nsuck my ass" left="10" top="110" width="90" height="90" backgroundColor="yellow"></Label>
+    </AbsoluteLayout> -->
+
+    <GridLayout columns="50, auto, *" rows="50, auto, *" width="210" height="210">
+        <Label text="Team" row="0" column="0" width="90" height="90" backgroundColor="red"></Label>
+        <Label text="Scoresheet" row="0" column="1" width="90" height="90" backgroundColor="green"></Label>
+        <Label text="Analytics" row="1" column="0" width="90" height="90" backgroundColor="blue"></Label>
+        <Label text="Julian nsuck my ass" row="1" column="1" width="90" height="90" backgroundColor="yellow"></Label>
+    </GridLayout>
