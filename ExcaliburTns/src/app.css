@@ -49,3 +49,9 @@ Image {
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
+.homelabels{
+    text-align: center;
+    /* font-size: 13px;
+    position: relative;  -->these didnt work, have to play some more...trying to center the whole thing
+    top: 10px; */
+}
