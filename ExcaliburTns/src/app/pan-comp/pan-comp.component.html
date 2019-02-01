@@ -1,7 +1,7 @@
 
     
 <GridLayout rows="*,*,*,*,*,*,*" columns="auto,*,auto" ><!--7 players means 7 *'s for equal rows-->
-        <Label text="player 1" row="0" col="0"></Label>
+        <Button text="player 1" row="0" col="0" [class.button-clicked]="buttonClicked" (tap)="buttonClicked = !buttonClicked"></Button>
         <Label text="Pass" row="0" col="1"></Label>
         <Label text="Player 2" row="1" col="0"></Label>
         <Label text="Shot" row="1" col="1"></Label>

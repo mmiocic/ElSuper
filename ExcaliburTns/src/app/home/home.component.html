@@ -8,7 +8,7 @@
    
     <Label text="Welcome to my app!"></Label>
     <Button text="Go to Page2" [nsRouterLink]="['/page2']"></Button>
-    <Label text="You can also tap 'Eat Ass' to go to page 2"></Label>
+    <Label text="You can also tap 'Scoresheet' to go to pan demo"></Label>
     <!-- <Image src="https://user-images.githubusercontent.com/544280/42960643-66d498ac-8b5a-11e8-8946-7224eefea6a5.jpg" >
     </Image> -->
     
@@ -18,7 +18,7 @@
 
     <GridLayout columns="*,*" rows="*,*" width="300" height="300" backgroundColor="lightgray">
         <Label class="homelabels" text="Team" col="0" row="0" backgroundColor="red"></Label>
-        <Label class="homelabels" text="Scoresheet" col="1" row="0" backgroundColor="green"></Label>
+        <Label class="homelabels" text="Scoresheet" col="1" row="0" backgroundColor="green" [nsRouterLink]="['/panComp']"></Label>
         <Label class="homelabels" text="Analytics" col="0" row="1" backgroundColor="blue"></Label>
-        <Label class="homelabels" text="Eat Ass" col="1" row="1" backgroundColor="yellow" [nsRouterLink]="['/page2']"></Label>
+        <Label class="homelabels" text="Anotha 1" col="1" row="1" backgroundColor="yellow" [nsRouterLink]="['/page2']"></Label>
     </GridLayout>

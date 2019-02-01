@@ -11,7 +11,10 @@ import {
   selector: 'ns-pan-comp',
   templateUrl: './pan-comp.component.html',
   styleUrls: ['./pan-comp.component.css'],
-  styles: ["label { font-size: 32; margin: 2; background-color: lightgreen;}"],
+  styles: ["label { font-size: 32; margin: 2; background-color: lightgreen;}"
+        
+
+],
   moduleId: module.id,
 })
 export class PanCompComponent implements OnInit {
@@ -20,13 +23,20 @@ export class PanCompComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  buttonClicked: boolean = false;
+
+  
 }
+
+
 
 export class GestureComponent {
 
   // >> ng-tap-gesture
   onTap(args: GestureEventData) {
       console.log("Tap!");
+      //let button = <Button>args.object;
   }
   // << ng-tap-gesture
 
