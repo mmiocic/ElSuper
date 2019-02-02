@@ -7,26 +7,61 @@ import {
     SwipeGestureEventData,
     TouchGestureEventData} from "tns-core-modules/ui/gestures";
 
+import { EventData } from "tns-core-modules/data/observable";
+import { View } from "tns-core-modules/ui/core/view";
+
+
+
 @Component({
   selector: 'ns-pan-comp',
   templateUrl: './pan-comp.component.html',
   styleUrls: ['./pan-comp.component.css'],
-  styles: ["label { font-size: 32; margin: 2; background-color: lightgreen;}"],
+  styles: ["label { font-size: 32; margin: 2; background-color: lightgreen;}"
+        
+
+],
   moduleId: module.id,
 })
+
+
 export class PanCompComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit() {
   }
+
+    buttonClicked: boolean = false;
+
+    playerToggle(args: EventData){
+        let button = <View>args.object;
+        this.buttonClicked = !this.buttonClicked;
+        if (this.buttonClicked) {
+            button.className = "button-clicked";
+        } else if (this.buttonClicked == false) {
+             button.className = "";
+         }
+    }
+
+    goalCount = 0;
+
+    goalTap(args: EventData){
+        if (this.buttonClicked) {
+            this.goalCount++;
+            console.log("Goal!");
+            this.playerToggle(args);
+        }
+    }
 }
+
+
 
 export class GestureComponent {
 
   // >> ng-tap-gesture
   onTap(args: GestureEventData) {
       console.log("Tap!");
+      //let button = <Button>args.object;
   }
   // << ng-tap-gesture
 

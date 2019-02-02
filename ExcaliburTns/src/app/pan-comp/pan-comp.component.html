@@ -1,9 +1,12 @@
-
-    
+<ActionBar class="action-bar">
+        <Label class="action-bar-title" [text]="'Goals: ' + goalCount"></Label>
+</ActionBar>
+   
 <GridLayout rows="*,*,*,*,*,*,*" columns="auto,*,auto" ><!--7 players means 7 *'s for equal rows-->
-        <Label text="player 1" row="0" col="0"></Label>
-        <Label text="Pass" row="0" col="1"></Label>
-        <Label text="Player 2" row="1" col="0"></Label>
+        <Button text="player 1" row="0" col="0" (tap)="playerToggle($event)"></Button>
+        <Label class ="action" text="Pass" row="0" col="1"></Label>
+        <!-- <Button text="Player 2" row="1" col="0" [class.button-clicked]="buttonClicked" (tap)="buttonClicked = !buttonClicked"></Button> -->
+        <Button text="Player 2" row="1" col="0" (tap)="playerToggle($event)"></Button>
         <Label text="Shot" row="1" col="1"></Label>
         <Label text="Player 3" row="2" col="0"></Label>
         <Label text="Foul" row="2" col="1" ></Label>
@@ -14,7 +17,7 @@
         <Label text="Player 6" row="5" col="0"></Label>
         <Label text="Ejection" row="5" col="1"></Label>
         <Label text="Golie" row="6" col="0"></Label>
-        <Label text="Goal" row="6" col="1"></Label>
+        <Label text="Goal" row="6" col="1" (tap)="goalTap($event)"></Label>
 </GridLayout>
 
 <!-- <StackLayout orientation="vertical">
