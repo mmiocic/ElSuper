@@ -7,6 +7,11 @@ import {
     SwipeGestureEventData,
     TouchGestureEventData} from "tns-core-modules/ui/gestures";
 
+import { EventData } from "tns-core-modules/data/observable";
+import { View } from "tns-core-modules/ui/core/view";
+
+
+
 @Component({
   selector: 'ns-pan-comp',
   templateUrl: './pan-comp.component.html',
@@ -17,6 +22,8 @@ import {
 ],
   moduleId: module.id,
 })
+
+
 export class PanCompComponent implements OnInit {
 
   constructor() { }
@@ -24,9 +31,27 @@ export class PanCompComponent implements OnInit {
   ngOnInit() {
   }
 
-  buttonClicked: boolean = false;
+    buttonClicked: boolean = false;
 
-  
+    playerToggle(args: EventData){
+        let button = <View>args.object;
+        this.buttonClicked = !this.buttonClicked;
+        if (this.buttonClicked) {
+            button.className = "button-clicked";
+        } else if (this.buttonClicked == false) {
+             button.className = "";
+         }
+    }
+
+    goalCount = 0;
+
+    goalTap(args: EventData){
+        if (this.buttonClicked) {
+            this.goalCount++;
+            console.log("Goal!");
+            this.playerToggle(args);
+        }
+    }
 }
 
 
