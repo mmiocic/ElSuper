@@ -1,0 +1,107 @@
+LOG from device julian's phone: 2019-02-02 18:31:42.285 nsplaydev[869:115022] PlayLiveSync: openURL
+2019-02-02 18:31:42.286 nsplaydev[869:115022] PlayLiveSync: Starting application using url nsplay://restart?pKey=pub-c-d7893276-cc78-4d18-8ab0-becba06e43de&sKey=sub-c-3dad1ebe-aaa3-11e8-8027-363023237e0b&instanceId=auunCZXHR&template=play-ng&hmr=0
+2019-02-02 18:31:42:301 nsplaydev[869:115022] <Logger::com.pubnub.pubnub-objc> File logger enabled.
+2019-02-02 18:31:42:301 nsplaydev[869:115022] <Logger::com.pubnub.pubnub-objc> Log files stored in: /var/mobile/Containers/Data/Application/F11719EA-324B-46DF-9297-046F5AA848DF/Documents/Logs/com.pubnub.pubnub-objc.
+2019-02-02 18:31:42:301 nsplaydev[869:115022] <Logger::com.pubnub.pubnub-objc> Disk quota changed to 52428800 bytes.
+2019-02-02 18:31:42.313 nsplaydev[869:115022] PlayLiveSync: Applying filter expression - (platform == 'ios' || platform == 'all') && (msvi <= 24 || di == '78D68716-A19C-4282-B93B-DCD3A77ECA91')
+2019-02-02 18:31:42.314 nsplaydev[869:115022] PlayLiveSync: PubNub listener started and subscribed to channel m-ch-auunCZXHR
+2019-02-02 18:31:42.352 nsplaydev[869:115022] ***** Fatal JavaScript exception - application has been terminated. *****
+2019-02-02 18:31:42.352 nsplaydev[869:115022] Native stack trace:
+1   0x102d89194 NativeScript::reportFatalErrorBeforeShutdown(JSC::ExecState*, JSC::Exception*, bool, bool)
+2   0x102db4518 NativeScript::FFICallback<NativeScript::ObjCMethodCallback>::ffiClosureCallback(ffi_cif*, void*, void**, void*)
+3   0x1038121c8 ffi_closure_SYSV_inner
+4   0x1038141b4 .Ldo_closure
+5   0x23b887ad4 <redacted>
+6   0x2126f9b74 <redacted>
+7   0x2126feb2c <redacted>
+8   0x21265d44c <redacted>
+9   0x21268bd7c <redacted>
+10  0x23b3f9838 <redacted>
+11  0x20e08d040 <redacted>
+12  0x20e08c940 <redacted>
+13  0x20e087934 <redacted>
+14  0x20e0871f0 CFRunLoopRunSpecific
+15  0x210300584 GSEventRunModal
+16  0x23b3df4c0 UIApplicationMain
+17  0x103814044 ffi_call_SYSV
+18  0x1038118dc ffi_call_int
+19  0x1038113a0 ffi_call
+20  0x102d514e4 NativeScript::FFICall::call(JSC::ExecState*)
+21  0x103810448 llint_entry
+22  0x10380f8a4 llint_entry
+23  0x10380f8a4 llint_entry
+24  0x10380f8a4 llint_entry
+25  0x10380f8a4 llint_entry
+26  0x10380f8a4 llint_entry
+27  0x10380f8a4 llint_entry
+28  0x10380830c vmEntryToJavaScript
+29  0x1036089ac JSC::Interpreter::executeCall(JSC::ExecState*, JSC::JSObject*, JSC::CallType, JSC::CallData const&, JSC::JSValue, JSC::ArgList const&)
+30  0x1037c23e0 JSC::call(JSC::ExecState*, JSC::JSValue, JSC::CallType, JSC::CallData const&, JSC::JSValue, JSC::ArgList const&, WTF::NakedPtr<JSC::Exception>&)
+31  0x102d68558 NativeScript::GlobalObject::moduleLoaderEvaluate(JSC::JSGlobalObject*, JSC::ExecState*, JSC::JSModuleLoader*, JSC::JSValue, JSC::JSValue, JSC::JSValue)
+2019-02-02 18:31:42.359 nsplaydev[869:115022] JavaScript stack trace:
+2019-02-02 18:31:42.359 nsplaydev[869:115022] 1   @file:///app/tns_modules/tns-core-modules/ui/content-view/content-view.js:44:91
+2   _eachLayoutView@file:///app/tns_modules/tns-core-modules/ui/core/view/view-common.js:880:24
+3   @file:///app/tns_modules/tns-core-modules/ui/proxy-view-container/proxy-view-container.js:45:35
+4   eachChildView@file:///app/tns_modules/tns-core-modules/ui/layouts/layout-base-common.js:125:34
+5   _eachLayoutView@file:///app/tns_modules/tns-core-modules/ui/proxy-view-container/proxy-view-container.js:43:27
+6   get@file:///app/tns_modules/tns-core-modules/ui/content-view/content-view.js:38:46
+7   onMeasure@file:///app/tns_modules/tns-core-modules/ui/page/page.js:255:64
+8   measure@file:///app/tns_modules/tns-core-modules/ui/core/view/view.js:55:27
+9   measureChild@file:///app/tns_modules/tns-core-modules/ui/core/view/view-common.js:819:26
+10  layoutView@file:///app/tns_modules/tns-core-modules/ui/core/view/view.js:621:26
+11  viewDidLayoutSubviews@file:///app/tns_modules/tns-core-modules/ui/page/page.js:175:34
+12  UIApplicationMain@[native code]
+13  start@file:///app/tns_modules/tns-core-modules/application/application.js:273:26
+14  run@file:///app/tns_modules/tns-core-modules/application/application.js:301:10
+15  bootstrapNativeScriptApp@file:///app/tns_modules/nativescript-angular/platform-common.js:187:26
+16  bootstrapApp@file:///app/tns_modules/nativescript-angular/platform-common.js:105:38
+17  bootstrapModule@file:///app/tns_modules/nativescript-angular/platform-common.js:89:26
+18  anonymous@file:///app/main.js:6:57
+19  evaluate@[native code]
+20  moduleEvaluation@[native code]
+21  promiseReactionJob@[native code]
+2019-02-02 18:31:42.359 nsplaydev[869:115022] JavaScript error:
+file:///app/tns_modules/tns-core-modules/ui/content-view/content-view.js:44:91: JS ERROR Error: More than one layout child inside a ContentView
+2019-02-02 18:31:42.363 nsplaydev[869:115022] PlayLiveSync: Uncaught Exception
+2019-02-02 18:31:42.363 nsplaydev[869:115022] PlayLiveSync: Sending crash report
+2019-02-02 18:31:46.369 nsplaydev[869:115022] *** JavaScript call stack:
+(
+        0   UIApplicationMain@[native code]
+        1   start@file:///app/tns_modules/tns-core-modules/application/application.js:273:26
+        2   run@file:///app/tns_modules/tns-core-modules/application/application.js:301:10
+        3   bootstrapNativeScriptApp@file:///app/tns_modules/nativescript-angular/platform-common.js:187:26
+        4   bootstrapApp@file:///app/tns_modules/nativescript-angular/platform-common.js:105:38
+        5   bootstrapModule@file:///app/tns_modules/nativescript-angular/platform-common.js:89:26
+        6   anonymous@file:///app/main.js:6:57
+        7   evaluate@[native code]
+        8   moduleEvaluation@:1:11
+        9   promiseReactionJob@:1:11
+)
+2019-02-02 18:31:46.369 nsplaydev[869:115022] *** Terminating app due to uncaught exception 'NativeScript encountered a fatal error: Error: More than one layout child inside a ContentView
+ at
+1   @file:///app/tns_modules/tns-core-modules/ui/content-view/content-view.js:44:91
+2   _eachLayoutView@file:///app/tns_modules/tns-core-modules/ui/core/view/view-common.js:880:24
+3   @file:///app/tns_modules/tns-core-modules/ui/proxy-view-container/proxy-view-container.js:45:35
+4   eachChildView@file:///app/tns_modules/tns-core-modules/ui/layouts/layout-base-common.js:125:34
+5   _eachLayoutView@file:///app/tns_modules/tns-core-modules/ui/proxy-view-container/proxy-view-container.js:43:27
+6   get@file:///app/tns_modules/tns-core-modules/ui/content-view/content-view.js:38:46
+7   onMeasure@file:///app/tns_modules/tns-core-modules/ui/page/page.js:255:64
+8   measure@file:///app/tns_modules/tns-core-modules/ui/core/view/view.js:55:27
+9   measureChild@file:///app/tns_modules/tns-core-modules/ui/core/view/view-common.js:819:26
+10  layoutView@file:///app/tns_modules/tns-core-modules/ui/core/view/view.js:621:26
+11  viewDidLayoutSubviews@file:///app/tns_modules/tns-core-modules/ui/page/page.js:175:34
+12  UIApplicationMain@[native code]
+13  start@file:///app/tns_modules/tns-core-modules/application/application.js:273:26
+14  run@file:///app/tns_modules/tns-core-modules/application/application.js:301:10
+15  bootstrapNativeScriptApp@file:///app/tns_modules/nativescript-angular/platform-common.js:187:26
+16  bootstrapApp@file:///app/tns_modules/nativescript-angular/platform-common.js:105:38
+17  bootstrapModule@file:///app/tns_modules/nativescript-angular/platform-common.js:89:26
+18  anonymous@file:///app/main.js:6:57
+19  evaluate@[native code]
+20  moduleEvaluation@[native code]
+21  promiseReactionJob@[native code]
+', reason: '(null)'
+*** First throw call stack:
+(0x20e0fcec4 0x20d2cda40 0x102d89544 0x102db4518 0x1038121c8 0x1038141b4 0x23b887ad4 0x2126f9b74 0x2126feb2c 0x21265d44c 0x21268bd7c 0x23b3f9838 0x20e08d040 0x20e08c940 0x20e087934 0x20e0871f0 0x210300584 0x23b3df4c0 0x103814044 0x1038118dc 0x1038113a0 0x102d514e4 0x103810448 0x10380f8a4 0x10380f8a4 0x10380f8a4 0x10380f8a4 0x10380f8a4 0x10380f8a4 0x10380830c 0x1036089ac 0x1037c23e0 0x102d68558 0x102e97d84 0x10381031c 0x10380f8a4 0x10380f8a4 0x10380830c 0x1036089ac 0x1037c2544 0x102e93184 0x102d5fa78 0x102dbf64c 0x102c0bb78 0x1026974f4 0x20db46bb4)
+libc++abi.dylib: terminating with uncaught exception of type NSException
+2019-02-02 18:31:46.369 nsplaydev[869:115022] PlayLiveSync: Uncaught Exception
