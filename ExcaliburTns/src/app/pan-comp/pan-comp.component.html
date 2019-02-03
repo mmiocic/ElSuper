@@ -3,10 +3,10 @@
 </ActionBar>
    
 <GridLayout rows="*,*,*,*,*,*,*" columns="auto,*,auto" ><!--7 players means 7 *'s for equal rows-->
-        <Button id="p1" text="player 1" row="0" col="0" [class.button-clicked]="buttonClicked" (tap)="playerToggle()"></Button>
+        <Button id="p1" text="player 1" row="0" col="0" [class.button-clicked]="buttonClicked" (tap)="playerToggle($event)"></Button>
         <Label class ="julianslabel" text="Pass" row="0" col="1"></Label>
         <!-- <Button text="Player 2" row="1" col="0" [class.button-clicked]="buttonClicked" (tap)="buttonClicked = !buttonClicked"></Button> -->
-        <Button id="p2" text="Player 2" row="1" col="0" [class.button-clicked]="buttonClicked" (tap)="playerToggle()"></Button>
+        <Button id="p2" text="Player 2" row="1" col="0" [class.button-clicked]="buttonClicked" (tap)="playerToggle($event)"></Button>
         <Label class ="julianslabel" text="Shot" row="1" col="1"></Label>
         <Label class ="julianslabel" text="Player 3" row="2" col="0"></Label>
         <Label class ="julianslabel" text="Foul" row="2" col="1" ></Label>
@@ -17,7 +17,7 @@
         <Label class ="julianslabel" text="Player 6" row="5" col="0"></Label>
         <Label class ="julianslabel" text="Ejection" row="5" col="1"></Label>
         <Label class ="julianslabel" text="Golie" row="6" col="0"></Label>
-        <Label class ="julianslabel" text="Goal" row="6" col="1" (tap)="goalTap()"></Label>
+        <Label class ="julianslabel" text="Goal" row="6" col="1" (tap)="goalTap($event)"></Label>
 </GridLayout>
 
 <!-- <StackLayout orientation="vertical">

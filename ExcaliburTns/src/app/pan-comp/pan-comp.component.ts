@@ -34,16 +34,16 @@ export class PanCompComponent implements OnInit {
 
     playerToggle(args: EventData){
         let button = <View>args.object; //button is object from html Button 
-        let buttonid = button.id;
-        console.log(button);
-        console.log(buttonid);
-        let gridLO = button.parent;
+        // let buttonid = button.id;
+        // console.log(button);
+        // console.log(buttonid);
+        // let gridLO = button.parent;
         this.buttonClicked = !this.buttonClicked;
-        // if (this.buttonClicked) {
-        //     button.className = "button-clicked";
-        // } else if (this.buttonClicked == false) {
-        //     button.className = "";
-        //  }
+        if (this.buttonClicked) {
+            button.className = "button-clicked";
+        } else if (this.buttonClicked == false) {
+            button.className = "";
+         }
     }
 
 
