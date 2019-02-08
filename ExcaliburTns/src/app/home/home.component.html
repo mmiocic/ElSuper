@@ -1,23 +1,38 @@
 <ActionBar class="action-bar">
-    <Label class="action-bar-title" text="Water Polo Stats App (name TBD)"></Label>
+    <Label class="action-bar-title" text="Water Polo Stats App (Marko likes balls?)"></Label>
 </ActionBar>
 
-
-
 <StackLayout class="page">
-   
-    <Label text="Welcome to my app!"></Label>
-    <Button text="Go to Page2" [nsRouterLink]="['/page2']"></Button>
-    <Label text="You can also tap 'Scoresheet' to go to pan demo"></Label>
-    <!-- <Image src="https://user-images.githubusercontent.com/544280/42960643-66d498ac-8b5a-11e8-8946-7224eefea6a5.jpg" >
-    </Image> -->
+    <!-- Segmented bar lets us switch partail views while staying on the same page-->
+    <SegmentedBar [items]="items" (selectedIndexChange)="onSelectedIndexChange($event)" class="m-5" ></SegmentedBar>
+    <StackLayout [visibility]="selectedIndex === 0 ? 'visible' : 'collapsed'" backgroundColor="white">
+        <Label text="Pick Lineup"></Label>
+        <TextField hint="write something bitch"></TextField>
+        <Label text="Opponent"></Label>
+        <TextField hint="just do it"></TextField>
+        <Label text="Date/Time"></Label>
+        <TextField hint="markos a bitch"></TextField>
+        <Label text="Time/Quarter"></Label>
+        <TextField hint="marko has a baby penis"></TextField>
+    </StackLayout>
     
+    <GridLayout rows="*" [visibility]="selectedIndex === 1 ? 'visible' : 'collapsed'" backgroundColor="green">
+        <Label [text]="'The new selectedIndex is: ' + selectedIndex" class="m-15 h3 p-5 text-center" color="white"></Label>
+    </GridLayout>
+    
+    <GridLayout rows="*" [visibility]="selectedIndex === 2 ? 'visible' : 'collapsed'" backgroundColor="red">
+        <Label [text]="'The new selectedIndex is: ' + selectedIndex" class="m-15 h3 p-5 text-center" color="white"></Label>
+    </GridLayout>
+</StackLayout> 
+
+
+    <!-- <Label text="Welcome to my app!"></Label>
+    <Button text="Go to Page2" [nsRouterLink]="['/page2']"></Button>
+    <Label text="You can also tap 'Scoresheet' to go to pan demo"></Label>    
     <GridLayout columns="*,*" rows="*,*" width="300" height="300" backgroundColor="lightgray">
         <Label class="homelabels" text="Team" col="0" row="0" backgroundColor="red"></Label>
         <Label class="homelabels" text="Scoresheet" col="1" row="0" backgroundColor="green" [nsRouterLink]="['/panComp']"></Label>
         <Label class="homelabels" text="Analytics" col="0" row="1" backgroundColor="blue"></Label>
         <Label class="homelabels" text="Anotha 1" col="1" row="1" backgroundColor="yellow" [nsRouterLink]="['/page2']"></Label>
-    </GridLayout>
-</StackLayout> 
-
+    </GridLayout> -->
 
