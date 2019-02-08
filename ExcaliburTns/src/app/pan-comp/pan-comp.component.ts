@@ -16,9 +16,8 @@ import { View } from "tns-core-modules/ui/core/view";
   selector: 'ns-pan-comp',
   templateUrl: './pan-comp.component.html',
   styleUrls: ['./pan-comp.component.css'],
-  styles: ["label { font-size: 32; margin: 2; background-color: lightgreen;}"
+  styles: [
         
-
 ],
   moduleId: module.id,
 })
@@ -34,18 +33,25 @@ export class PanCompComponent implements OnInit {
     buttonClicked: boolean = false;
 
     playerToggle(args: EventData){
-        let button = <View>args.object;
+        let button = <View>args.object; //button is object from html Button 
+        // let buttonid = button.id;
+        // console.log(button);
+        // console.log(buttonid);
+        // let gridLO = button.parent;
         this.buttonClicked = !this.buttonClicked;
         if (this.buttonClicked) {
             button.className = "button-clicked";
         } else if (this.buttonClicked == false) {
-             button.className = "";
+            button.className = "";
          }
     }
+
 
     goalCount = 0;
 
     goalTap(args: EventData){
+        let lbl = <View>args.object;
+        let gridLayout = lbl.parent;
         if (this.buttonClicked) {
             this.goalCount++;
             console.log("Goal!");
@@ -56,7 +62,9 @@ export class PanCompComponent implements OnInit {
 
 
 
-export class GestureComponent {
+export class GestureComponent { //the name of this component is pan-comp...
+                                //..so everything inside these braces wont work
+                                //but still useful to have for references
 
   // >> ng-tap-gesture
   onTap(args: GestureEventData) {
