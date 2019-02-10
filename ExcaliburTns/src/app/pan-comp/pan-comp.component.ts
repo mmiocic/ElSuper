@@ -32,6 +32,13 @@ export class PanCompComponent implements OnInit {
 
   allPlayers: Player[] = this.playerService.getPlayers();
   //playersInLineup: Player[] --> will need to figure this out later
+  actions: string[] =[
+      "Shot",
+      "Foul",
+      "Ejection",
+      "Pass",
+      "Goal"
+  ];
 
     buttonClicked: boolean = false;
 

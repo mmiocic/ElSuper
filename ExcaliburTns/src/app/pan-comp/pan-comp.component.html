@@ -21,22 +21,34 @@
         <Label class ="julianslabel" text="Goal" row="6" col="1" (tap)="goalTap($event)"></Label>
 </GridLayout> -->
 
-<GridLayout rows="*" columns="*,2*">
-        <ListView [items]="allPlayers">
-                <ng-template let-item="item" let-i="index">
-                        <StackLayout [row]="i" col="0" [class.button-clicked]="buttonClicked" [class.playericon]="!buttonClicked" (tap)="playerToggle($event)">
-                                <Label [text]="item.cap"></Label>
-                                <Label [text]="item.lastname" style="font-size: 16"></Label>
-                        </StackLayout>
-                </ng-template>
-        </ListView>
-        <Label class ="julianslabel" text="Pass" row="0" col="1"></Label>
-        <Label class ="julianslabel" text="Shot" row="1" col="1"></Label>
-        <Label class ="julianslabel" text="Foul" row="2" col="1" ></Label>
-        <Label class ="julianslabel" text="Steal" row="3" col="1" ></Label>
-        <Label class ="julianslabel" text="Block" row="4" col="1"></Label>
-        <Label class ="julianslabel" text="Ejection" row="5" col="1"></Label>
-        <Label class ="julianslabel" text="Goal" row="6" col="1" (tap)="goalTap($event)"></Label>
+<GridLayout rows="*" columns="*,2*" class="bckgnd">
+        <StackLayout col="0" class="bckgnd2"> 
+                <ListView [items]="allPlayers">
+                        <ng-template let-item="item">
+                                <StackLayout [class.button-clicked]="buttonClicked" [class.playericon]="!buttonClicked" (tap)="playerToggle($event)">
+                                        <Label [text]="item.cap"></Label>
+                                        <Label [text]="item.lastname" style="font-size: 16"></Label>
+                                </StackLayout>
+                        </ng-template>
+                </ListView>
+        </StackLayout>
+        
+        
+        <StackLayout col="1">
+                <ListView [items]="actions" class="bckgnd2">
+                        <ng-template let-item="item" let-i="index">
+                                <StackLayout>
+                                        <Label class ="julianslabel" [text]="item"></Label>
+                                        <Label class ="julianslabel" [text]="item" *ngIf="item == 'Goal'" (tap)="goalTap($event)"></Label>
+                                </StackLayout>
+                                <!-- <StackLayout>
+                                        <Label class ="julianslabel" [text]="item"></Label>
+                                </StackLayout> -->
+                        </ng-template>
+                </ListView>
+        </StackLayout>
+        
+        <!-- <Label class ="julianslabel" text="Goal" row="0" col="1" (tap)="goalTap($event)"></Label> -->
 </GridLayout>
 
 <!-- <StackLayout orientation="vertical">
