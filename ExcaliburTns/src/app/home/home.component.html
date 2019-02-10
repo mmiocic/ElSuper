@@ -4,25 +4,34 @@
 
 <StackLayout class="page">
     <!-- Segmented bar lets us switch partail views while staying on the same page-->
-    <SegmentedBar [items]="items" (selectedIndexChange)="onSelectedIndexChange($event)" class="m-5" ></SegmentedBar>
+    <SegmentedBar [items]="segmentedItems" (selectedIndexChange)="onSelectedIndexChange($event)" class="m-5" ></SegmentedBar>
     <StackLayout [visibility]="selectedIndex === 0 ? 'visible' : 'collapsed'" backgroundColor="white">
-        <Label text="Pick Lineup"></Label>
-        <TextField hint="write something bitch"></TextField>
-        <Label text="Opponent"></Label>
+        <Label text="Pick Lineup:"></Label>
+        <TextField hint="write something... Bitch!!!"></TextField>
+        <Label text="Opponent:"></Label>
         <TextField hint="just do it"></TextField>
-        <Label text="Date/Time"></Label>
-        <TextField hint="markos a bitch"></TextField>
-        <Label text="Time/Quarter"></Label>
+        <Label text="Date/Time:"></Label>
+        <TextField hint="Marko's a bitch"></TextField>
+        <Label text="Time/Quarter:"></Label>
         <TextField hint="marko has a baby penis"></TextField>
     </StackLayout>
     
-    <GridLayout rows="*" [visibility]="selectedIndex === 1 ? 'visible' : 'collapsed'" backgroundColor="green">
-        <Label [text]="'The new selectedIndex is: ' + selectedIndex" class="m-15 h3 p-5 text-center" color="white"></Label>
-    </GridLayout>
+    <ListView [items]="LineupListItems" [visibility]="selectedIndex === 1 ? 'visible' : 'collapsed'" backgroundColor="green">
+        <ng-template let-item="item">
+            <StackLayout>
+                <Label (loaded)="onLoaded()" [text] = "'item ' + item"></Label>
+            </StackLayout>
+        </ng-template>
+        <!-- <Label [text]="'The new selectedIndex is: ' + selectedIndex" class="m-15 h3 p-5 text-center" color="white"></Label> -->
+    </ListView>
     
-    <GridLayout rows="*" [visibility]="selectedIndex === 2 ? 'visible' : 'collapsed'" backgroundColor="red">
-        <Label [text]="'The new selectedIndex is: ' + selectedIndex" class="m-15 h3 p-5 text-center" color="white"></Label>
-    </GridLayout>
+    <StackLayout [visibility]="selectedIndex === 2 ? 'visible' : 'collapsed'" backgroundColor="red">
+        <Button id = "addRow" (tap) ="addRowItem($event)" text="add item to row"></Button>
+        <StackLayout  id="stackLayoutId" (loaded) = "setRepeater($event)" >
+                <Label text="{{ 'Result: ' + prResult}}" textWrap="true"></Label>
+            <!-- <Label [text]="'The new selectedIndex is: ' + selectedIndex" class="m-15 h3 p-5 text-center" color="white"></Label> -->
+        </StackLayout>
+    </StackLayout>
 </StackLayout> 
 
 
