@@ -1,10 +1,18 @@
 /* Add mobile styles for the component here.  */
 .button-clicked {
     background-color:#00A3FF;
+    font-size: 32; 
+    margin: 2;
  }
 
 .julianslabel { 
      font-size: 32; 
      margin: 2;
      background-color: lightgreen;
+}
+.playericon {
+     font-size: 32; 
+     margin: 2;
+     background-color: navy;
+     color:white;
 }

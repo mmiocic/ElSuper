@@ -5,7 +5,7 @@
 <StackLayout class="page">
     <!-- Segmented bar lets us switch partail views while staying on the same page-->
     <SegmentedBar [items]="segmentedItems" (selectedIndexChange)="onSelectedIndexChange($event)" class="m-5" ></SegmentedBar>
-    <StackLayout [visibility]="selectedIndex === 0 ? 'visible' : 'collapsed'" >
+    <StackLayout height="100%"[visibility]="selectedIndex === 0 ? 'visible' : 'collapsed'" >
         <Label text="Pick Lineup:"></Label>
         <TextField hint="write something... Bitch!!!"></TextField>
         <Label text="Opponent:"></Label>
@@ -14,6 +14,8 @@
         <TextField hint="Marko's a bitch"></TextField>
         <Label text="Time/Quarter:"></Label>
         <TextField hint="marko has a baby penis"></TextField>
+        <Button width="30%" text="Start Game" [nsRouterLink]="['/panComp']"></Button>
+        
     </StackLayout>
     
     <StackLayout [visibility]="selectedIndex === 1 ? 'visible' : 'collapsed'">

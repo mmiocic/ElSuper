@@ -1,11 +1,12 @@
 <ActionBar class="action-bar">
+        <Button text="Go Back" [nsRouterLink]="['/']"></Button>
         <Label class="action-bar-title" [text]="'Goals: ' + goalCount"></Label>
 </ActionBar>
    
-<GridLayout rows="*,*,*,*,*,*,*" columns="auto,*,auto" ><!--7 players means 7 *'s for equal rows-->
+<!-- <GridLayout rows="*,*,*,*,*,*,*" columns="auto,*,auto" ><7 players means 7 *'s for equal rows>
         <Button id="p1" text="player 1" row="0" col="0" [class.button-clicked]="buttonClicked" (tap)="playerToggle($event)"></Button>
         <Label class ="julianslabel" text="Pass" row="0" col="1"></Label>
-        <!-- <Button text="Player 2" row="1" col="0" [class.button-clicked]="buttonClicked" (tap)="buttonClicked = !buttonClicked"></Button> -->
+        <<Button text="Player 2" row="1" col="0" [class.button-clicked]="buttonClicked" (tap)="buttonClicked = !buttonClicked"></Button> >
         <Button id="p2" text="Player 2" row="1" col="0" [class.button-clicked]="buttonClicked" (tap)="playerToggle($event)"></Button>
         <Label class ="julianslabel" text="Shot" row="1" col="1"></Label>
         <Label class ="julianslabel" text="Player 3" row="2" col="0"></Label>
@@ -17,6 +18,24 @@
         <Label class ="julianslabel" text="Player 6" row="5" col="0"></Label>
         <Label class ="julianslabel" text="Ejection" row="5" col="1"></Label>
         <Label class ="julianslabel" text="Golie" row="6" col="0"></Label>
+        <Label class ="julianslabel" text="Goal" row="6" col="1" (tap)="goalTap($event)"></Label>
+</GridLayout> -->
+
+<GridLayout rows="*" columns="*,2*">
+        <ListView [items]="allPlayers">
+                <ng-template let-item="item" let-i="index">
+                        <StackLayout [row]="i" col="0" [class.button-clicked]="buttonClicked" [class.playericon]="!buttonClicked" (tap)="playerToggle($event)">
+                                <Label [text]="item.cap"></Label>
+                                <Label [text]="item.lastname" style="font-size: 16"></Label>
+                        </StackLayout>
+                </ng-template>
+        </ListView>
+        <Label class ="julianslabel" text="Pass" row="0" col="1"></Label>
+        <Label class ="julianslabel" text="Shot" row="1" col="1"></Label>
+        <Label class ="julianslabel" text="Foul" row="2" col="1" ></Label>
+        <Label class ="julianslabel" text="Steal" row="3" col="1" ></Label>
+        <Label class ="julianslabel" text="Block" row="4" col="1"></Label>
+        <Label class ="julianslabel" text="Ejection" row="5" col="1"></Label>
         <Label class ="julianslabel" text="Goal" row="6" col="1" (tap)="goalTap($event)"></Label>
 </GridLayout>
 
