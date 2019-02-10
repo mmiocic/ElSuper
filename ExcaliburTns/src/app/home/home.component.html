@@ -5,7 +5,7 @@
 <StackLayout class="page">
     <!-- Segmented bar lets us switch partail views while staying on the same page-->
     <SegmentedBar [items]="segmentedItems" (selectedIndexChange)="onSelectedIndexChange($event)" class="m-5" ></SegmentedBar>
-    <StackLayout [visibility]="selectedIndex === 0 ? 'visible' : 'collapsed'" backgroundColor="white">
+    <StackLayout [visibility]="selectedIndex === 0 ? 'visible' : 'collapsed'" >
         <Label text="Pick Lineup:"></Label>
         <TextField hint="write something... Bitch!!!"></TextField>
         <Label text="Opponent:"></Label>
@@ -16,16 +16,19 @@
         <TextField hint="marko has a baby penis"></TextField>
     </StackLayout>
     
-    <ListView [items]="LineupListItems" [visibility]="selectedIndex === 1 ? 'visible' : 'collapsed'" backgroundColor="green">
-        <ng-template let-item="item">
-            <StackLayout>
-                <Label (loaded)="onLoaded()" [text] = "'item ' + item"></Label>
-            </StackLayout>
-        </ng-template>
-        <!-- <Label [text]="'The new selectedIndex is: ' + selectedIndex" class="m-15 h3 p-5 text-center" color="white"></Label> -->
-    </ListView>
+    <StackLayout [visibility]="selectedIndex === 1 ? 'visible' : 'collapsed'">
+        <Button id = "addRow" (tap) ="addRowItem($event)" text="add item to row"></Button>
+        <ListView [items]="LineupListItems">
+            <ng-template let-item="item">
+                <StackLayout>
+                    <Label (loaded)="onLoaded()" [text] = "'item ' + item"></Label>
+                </StackLayout>
+            </ng-template>
+            <!-- <Label [text]="'The new selectedIndex is: ' + selectedIndex" class="m-15 h3 p-5 text-center" color="white"></Label> -->
+        </ListView>
+    </StackLayout>
     
-    <StackLayout [visibility]="selectedIndex === 2 ? 'visible' : 'collapsed'" backgroundColor="red">
+    <StackLayout [visibility]="selectedIndex === 2 ? 'visible' : 'collapsed'">
         <Button id = "addRow" (tap) ="addRowItem($event)" text="add item to row"></Button>
         <StackLayout  id="stackLayoutId" (loaded) = "setRepeater($event)" >
                 <Label text="{{ 'Result: ' + prResult}}" textWrap="true"></Label>
