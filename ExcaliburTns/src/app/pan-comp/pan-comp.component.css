@@ -11,10 +11,11 @@
      background-color: lightgreen;
 }
 .playericon {
-     font-size: 32; 
+     font-size: 48; 
      margin: 2;
      background-color: navy;
      color:white;
+     text-align: center;
 }
 .bckgnd{
      background-color: yellow;

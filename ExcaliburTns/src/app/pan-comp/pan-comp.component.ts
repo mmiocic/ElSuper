@@ -42,8 +42,16 @@ export class PanCompComponent implements OnInit {
 
     buttonClicked: boolean = false;
 
-    playerToggle(args: EventData){
-       // let button = <View>args.object; //button is object from html Button 
+    playerToggle(args: EventData){//args is the label that is tapped
+        let label = <View>args.object; 
+        let stackLayout = label.parent;
+        if (stackLayout.className == "playericon") {
+            console.log("testing");
+            stackLayout.className = "button-clicked";
+        } else if (stackLayout.className == "button-clicked") {
+            console.log("this is another test");
+            stackLayout.className = "playericon";
+        }
         // let buttonid = button.id;
         // console.log(button);
         // console.log(buttonid);
