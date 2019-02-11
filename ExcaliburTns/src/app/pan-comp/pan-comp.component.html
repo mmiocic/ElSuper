@@ -1,5 +1,4 @@
 <ActionBar class="action-bar">
-        <Button text="Go Back" [nsRouterLink]="['/']"></Button>
         <Label class="action-bar-title" [text]="'Goals: ' + goalCount"></Label>
 </ActionBar>
    
@@ -34,11 +33,11 @@
         </StackLayout>
         
         
-        <StackLayout col="1">
-                <ListView [items]="actions" class="bckgnd2">
+        <StackLayout col="1" >
+                <ListView [items]="actions" class="bckgnd2"><!--put style="height:100%" for entire length-->
                         <ng-template let-item="item" let-i="index">
                                 <StackLayout>
-                                        <Label class ="julianslabel" [text]="item"></Label>
+                                        <Label class ="julianslabel" [text]="item" *ngIf="item != 'Goal'"></Label>
                                         <Label class ="julianslabel" [text]="item" *ngIf="item == 'Goal'" (tap)="goalTap($event)"></Label>
                                 </StackLayout>
                                 <!-- <StackLayout>

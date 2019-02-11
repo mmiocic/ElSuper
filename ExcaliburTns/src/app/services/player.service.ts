@@ -62,8 +62,8 @@ const players = [
     },
     {
         'id': 6,
-        'firstname': 'Sebastian',
-        'lastname': 'Ampuero',
-        'cap': 30
+        'firstname': 'Goran',
+        'lastname': 'Mataic',
+        'cap': 10
     }
   ];
