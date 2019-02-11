@@ -24,7 +24,7 @@
         <StackLayout col="0" class="bckgnd2"> 
                 <ListView [items]="allPlayers">
                         <ng-template let-item="item">
-                                <StackLayout class="playericon" (tap)="playerToggle($event)">
+                                <StackLayout [selectedPlayer]="item" class="playericon" (tap)="playerToggle($event)">
                                         <Label [text]="item.cap"></Label>
                                         <Label [text]="item.lastname" style="font-size: 16"></Label>
                                 </StackLayout>
@@ -38,16 +38,12 @@
                         <ng-template let-item="item" let-i="index">
                                 <StackLayout>
                                         <Label class ="julianslabel" [text]="item" *ngIf="item != 'Goal'"></Label>
-                                        <Label class ="julianslabel" [text]="item" *ngIf="item == 'Goal'" (tap)="goalTap($event)"></Label>
+                                        <Label class ="julianslabel" [text]="item" *ngIf="item == 'Goal'" (tap)="goalTap()"></Label>
                                 </StackLayout>
-                                <!-- <StackLayout>
-                                        <Label class ="julianslabel" [text]="item"></Label>
-                                </StackLayout> -->
                         </ng-template>
                 </ListView>
         </StackLayout>
         
-        <!-- <Label class ="julianslabel" text="Goal" row="0" col="1" (tap)="goalTap($event)"></Label> -->
 </GridLayout>
 
 <!-- <StackLayout orientation="vertical">

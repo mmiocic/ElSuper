@@ -1,8 +1,10 @@
 /* Add mobile styles for the component here.  */
 .button-clicked {
     background-color:#00A3FF;
-    font-size: 32; 
+    color:white;
+    font-size: 48; 
     margin: 2;
+    text-align: center;
  }
 
 .julianslabel { 

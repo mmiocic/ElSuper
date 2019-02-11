@@ -32,6 +32,7 @@ export class PanCompComponent implements OnInit {
 
   allPlayers: Player[] = this.playerService.getPlayers();
   //playersInLineup: Player[] --> will need to figure this out later
+
   actions: string[] =[
       "Shot",
       "Foul",
@@ -40,40 +41,35 @@ export class PanCompComponent implements OnInit {
       "Goal"
   ];
 
-    buttonClicked: boolean = false;
+  selectedPlayer: Player = new Player();
 
-    playerToggle(args: EventData){//args is the label that is tapped
-        let label = <View>args.object; 
-        let stackLayout = label.parent;
+    //buttonClicked: boolean = false;
+
+    playerToggle(args: EventData){//args is the stacklayout that is tapped
+        let stackLayout = <View>args.object; 
+        let tappedPlayer = stackLayout.bindingContext;    
+
         if (stackLayout.className == "playericon") {
-            console.log("testing");
             stackLayout.className = "button-clicked";
+            console.log(tappedPlayer.firstname + " was selected");
+            this.selectedPlayer = tappedPlayer;
         } else if (stackLayout.className == "button-clicked") {
-            console.log("this is another test");
             stackLayout.className = "playericon";
+            console.log(tappedPlayer.firstname + " was deselected");
+            this.selectedPlayer = new Player();
         }
-        // let buttonid = button.id;
-        // console.log(button);
-        // console.log(buttonid);
-        // let gridLO = button.parent;
-        this.buttonClicked = !this.buttonClicked;
-        // if (this.buttonClicked) {
-        //     button.className = "button-clicked";
-        // } else if (this.buttonClicked == false) {
-        //     button.className = "";
-        //  }
+        
     }
 
 
     goalCount = 0;
 
-    goalTap(args: EventData){
-        let lbl = <View>args.object;
-        let gridLayout = lbl.parent;
-        if (this.buttonClicked) {
+    goalTap(){
+        //let lbl = <View>args.object;
+        //let gridLayout = lbl.parent;
+        if (this.selectedPlayer.id != 0) {
             this.goalCount++;
-            console.log("Goal!");
-            this.playerToggle(args);
+            console.log(this.selectedPlayer.firstname + " scored a Goal!!!");
         }
     }
 }
