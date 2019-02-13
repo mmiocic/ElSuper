@@ -46,15 +46,25 @@ export class PanCompComponent implements OnInit {
     //buttonClicked: boolean = false;
 
     playerToggle(args: EventData){//args is the stacklayout that is tapped
-        let stackLayout = <View>args.object; 
-        let tappedPlayer = stackLayout.bindingContext;    
+        let tappedStack = <View>args.object; 
+        let tappedPlayer = tappedStack.bindingContext;    
 
-        if (stackLayout.className == "playericon") {
-            stackLayout.className = "button-clicked";
+        let parent = tappedStack.parent;
+        let highlight = parent.getViewById("button-clicked");
+
+        if(highlight){
+            if (highlight != tappedStack) {
+                highlight.id = "playericon";
+            }
+        }
+        
+
+        if (tappedStack.id == "playericon") {
+            tappedStack.id = "button-clicked";
             console.log(tappedPlayer.firstname + " was selected");
             this.selectedPlayer = tappedPlayer;
-        } else if (stackLayout.className == "button-clicked") {
-            stackLayout.className = "playericon";
+        } else if (tappedStack.id == "button-clicked") {
+            tappedStack.id = "playericon";
             console.log(tappedPlayer.firstname + " was deselected");
             this.selectedPlayer = new Player();
         }
@@ -65,8 +75,6 @@ export class PanCompComponent implements OnInit {
     goalCount = 0;
 
     goalTap(){
-        //let lbl = <View>args.object;
-        //let gridLayout = lbl.parent;
         if (this.selectedPlayer.id != 0) {
             this.goalCount++;
             console.log(this.selectedPlayer.firstname + " scored a Goal!!!");
@@ -76,9 +84,7 @@ export class PanCompComponent implements OnInit {
 
 
 
-// export class GestureComponent { //the name of this component is pan-comp...
-//                                 //..so everything inside these braces wont work
-//                                 //but still useful to have for references
+// export class GestureComponent { 
 
 //   // >> ng-tap-gesture
 //   onTap(args: GestureEventData) {

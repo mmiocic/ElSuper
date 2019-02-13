@@ -24,7 +24,7 @@
         <StackLayout col="0" class="bckgnd2"> 
                 <ListView [items]="allPlayers">
                         <ng-template let-item="item">
-                                <StackLayout [selectedPlayer]="item" class="playericon" (tap)="playerToggle($event)">
+                                <StackLayout [selectedPlayer]="item" id="playericon" (tap)="playerToggle($event)">
                                         <Label [text]="item.cap"></Label>
                                         <Label [text]="item.lastname" style="font-size: 16"></Label>
                                 </StackLayout>

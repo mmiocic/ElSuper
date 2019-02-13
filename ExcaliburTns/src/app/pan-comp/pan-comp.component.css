@@ -1,5 +1,5 @@
 /* Add mobile styles for the component here.  */
-.button-clicked {
+#button-clicked {
     background-color:#00A3FF;
     color:white;
     font-size: 48; 
@@ -12,7 +12,7 @@
      margin: 2;
      background-color: lightgreen;
 }
-.playericon {
+#playericon {
      font-size: 48; 
      margin: 2;
      background-color: navy;
