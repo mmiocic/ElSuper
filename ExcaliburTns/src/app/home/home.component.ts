@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { SegmentedBar, SegmentedBarItem } from "tns-core-modules/ui/segmented-bar";
 import { Repeater } from "tns-core-modules/ui/repeater";
 import { Page } from "tns-core-modules/ui/page";
@@ -90,5 +90,11 @@ export class HomeComponent implements OnInit {
         // Init your component properties here.
     }
 
+    onTap() {
+        alert("clicked an item");
+    }
     
+    tabSelected(args: number) {
+        console.log("tab selected: " + args);
+    }
 }

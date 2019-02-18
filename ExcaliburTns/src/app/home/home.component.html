@@ -3,6 +3,9 @@
 </ActionBar>
 
 <StackLayout class="page">
+
+    <TabBar (tabSelected)="tabSelected($event)"></TabBar>
+
     <!-- Segmented bar lets us switch partail views while staying on the same page-->
     <SegmentedBar [items]="segmentedItems" (selectedIndexChange)="onSelectedIndexChange($event)" class="m-5" ></SegmentedBar>
     <StackLayout height="100%"[visibility]="selectedIndex === 0 ? 'visible' : 'collapsed'" >
@@ -15,8 +18,10 @@
         <Label text="Time/Quarter:"></Label>
         <TextField hint="julian has a vagina"></TextField>
         <Button width="30%" text="Start Game" [nsRouterLink]="['/panComp']"></Button>
-        
-    </StackLayout>
+
+
+    
+       
     
     <StackLayout [visibility]="selectedIndex === 1 ? 'visible' : 'collapsed'">
         <Button id = "addRow" (tap) ="addRowItem($event)" text="add item to row"></Button>

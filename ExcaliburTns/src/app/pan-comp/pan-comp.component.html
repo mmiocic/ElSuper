@@ -1,5 +1,9 @@
-<ActionBar class="action-bar">
-        <Label class="action-bar-title" [text]="'Goals: ' + goalCount"></Label>
+<ActionBar [title]="'Goals: ' + goalCount" class="action-bar">
+        <ActionItem>
+		<StackLayout>
+			<Button text="Go Back" fontSize="20" [nsRouterLink]="['/']"></Button>
+		</StackLayout>
+	</ActionItem>
 </ActionBar>
    
 <!-- <GridLayout rows="*,*,*,*,*,*,*" columns="auto,*,auto" ><7 players means 7 *'s for equal rows>

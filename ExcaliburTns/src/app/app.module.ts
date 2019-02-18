@@ -7,6 +7,7 @@ import { Page2Component } from './page2/page2.component';
 import { HomeComponent } from "./home/home.component";
 import {PanCompComponent} from "./pan-comp/pan-comp.component";
 import { PlayerService } from "./services/player.service";
+import { TabBarComponent } from './tab-bar/tab-bar.component';
 
 @NgModule({
     bootstrap: [
@@ -23,7 +24,8 @@ import { PlayerService } from "./services/player.service";
         AppComponent,
         HomeComponent,
         Page2Component,
-        PanCompComponent
+        PanCompComponent,
+        TabBarComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA
