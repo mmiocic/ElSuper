@@ -2,56 +2,69 @@
     <Label class="action-bar-title" text="large black cocks in julians ass"></Label>
 </ActionBar>
 
-<StackLayout class="page">
+<!-- <StackLayout class="page"> --> <!-- will delete this line and line at bottem when confirmed working on ios -->
 
-    <TabBar (tabSelected)="tabSelected($event)"></TabBar>
-
-    <!-- Segmented bar lets us switch partail views while staying on the same page-->
-    <SegmentedBar [items]="segmentedItems" (selectedIndexChange)="onSelectedIndexChange($event)" class="m-5" ></SegmentedBar>
-    <StackLayout height="100%"[visibility]="selectedIndex === 0 ? 'visible' : 'collapsed'" >
-        <Label text="Pick Lineup:"></Label>
-        <TextField hint="write something... Bitch!!!"></TextField>
-        <Label text="Opponent:"></Label>
-        <TextField hint="just do it"></TextField>
-        <Label text="Date/Time:"></Label>
-        <TextField hint="Julian's a bitch"></TextField>
-        <Label text="Time/Quarter:"></Label>
-        <TextField hint="julian has a vagina"></TextField>
-        <Button width="30%" text="Start Game" [nsRouterLink]="['/panComp']"></Button>
-
-
+    <GridLayout rows="auto,*" class="page">
+        <GridLayout row="0" columns="*, *, *, *" height="60" backgroundColor="#0D0D12">
+            <GridLayout #tabHighlight col="0" backgroundColor="#F8A200"></GridLayout>
+            <GridLayout col="0" (tap)="selectTab(0)">
+                <Image #image1 src="~/app/assets/ic_local_cafe.png" height="23" width="23"></Image>
+            </GridLayout>
+            <GridLayout col="1" [class]="navigationButtonClasses('Games')" (tap)="selectTab(1)">
+                <Image #image2 src="~/app/assets/ic_fastfood.png" height="25" width="25"></Image>
+            </GridLayout>
+            <GridLayout col="2" [class]="navigationButtonClasses('Teams')" (tap)="selectTab(2)">
+                <Image #image3 src="~/app/assets/ic_local_pizza.png" height="25" width="25"></Image>
+            </GridLayout>
+            <GridLayout col="3"  (tap)="selectTab(3)">
+                <Image #image4 src="~/app/assets/ic_local_bar.png" height="25" width="25"></Image>
+            </GridLayout>
+        </GridLayout>
     
-       
-    
-    <StackLayout [visibility]="selectedIndex === 1 ? 'visible' : 'collapsed'">
-        <Button id = "addRow" (tap) ="addRowItem($event)" text="add item to row"></Button>
-        <ListView [items]="LineupListItems">
-            <ng-template let-item="item">
-                <StackLayout>
-                    <Label (loaded)="onLoaded()" [text] = "'item ' + item"></Label>
+        <StackLayout row="1" *ngIf="selectedTab == 0">
+                <StackLayout height="100%">
+                    <Label text="Pick Lineup:"></Label>
+                    <TextField hint="write something... Bitch!!!"></TextField>
+                    <Label text="Opponent:"></Label>
+                    <TextField hint="just do it"></TextField>
+                    <Label text="Date/Time:"></Label>
+                    <TextField hint="Julian's a bitch"></TextField>
+                    <Label text="Time/Quarter:"></Label>
+                    <TextField hint="julian has a vagina"></TextField>
+                    <Button width="30%" text="Start Game" [nsRouterLink]="['/panComp']"></Button>
                 </StackLayout>
-            </ng-template>
-            <!-- <Label [text]="'The new selectedIndex is: ' + selectedIndex" class="m-15 h3 p-5 text-center" color="white"></Label> -->
-        </ListView>
-    </StackLayout>
-    
-    <StackLayout [visibility]="selectedIndex === 2 ? 'visible' : 'collapsed'">
-        <Button id = "addRow" (tap) ="addRowItem($event)" text="add item to row"></Button>
-        <StackLayout  id="stackLayoutId" (loaded) = "setRepeater($event)" >
-                <Label text="{{ 'Result: ' + prResult}}" textWrap="true"></Label>
-            <!-- <Label [text]="'The new selectedIndex is: ' + selectedIndex" class="m-15 h3 p-5 text-center" color="white"></Label> -->
+               
+                
         </StackLayout>
-    </StackLayout>
-</StackLayout> 
 
 
-    <!-- <Label text="Welcome to my app!"></Label>
-    <Button text="Go to Page2" [nsRouterLink]="['/page2']"></Button>
-    <Label text="You can also tap 'Scoresheet' to go to pan demo"></Label>    
-    <GridLayout columns="*,*" rows="*,*" width="300" height="300" backgroundColor="lightgray">
-        <Label class="homelabels" text="Team" col="0" row="0" backgroundColor="red"></Label>
-        <Label class="homelabels" text="Scoresheet" col="1" row="0" backgroundColor="green" [nsRouterLink]="['/panComp']"></Label>
-        <Label class="homelabels" text="Analytics" col="0" row="1" backgroundColor="blue"></Label>
-        <Label class="homelabels" text="Anotha 1" col="1" row="1" backgroundColor="yellow" [nsRouterLink]="['/page2']"></Label>
-    </GridLayout> -->
+
+        <StackLayout row="1" *ngIf="selectedTab == 1">
+                <Label text="Carne"></Label>
+                <Label text="asada"></Label>
+        </StackLayout>
+
+        <StackLayout row="1" *ngIf="selectedTab == 2">
+            <Label text="me gusta comer culo"></Label>
+        </StackLayout>
+        
+        <GridLayout row="1" *ngIf="selectedTab == 3" columns="*,*" rows="*,*" width="300" height="300" backgroundColor="lightgray">
+                <Label class="homelabels" text="Team" col="0" row="0" backgroundColor="red"></Label>
+                <Label class="homelabels" text="Scoresheet" col="1" row="0" backgroundColor="green" [nsRouterLink]="['/panComp']"></Label>
+                <Label class="homelabels" text="Analytics" col="0" row="1" backgroundColor="blue"></Label>
+                <Label class="homelabels" text="Anotha 1" col="1" row="1" backgroundColor="yellow" [nsRouterLink]="['/page2']"></Label>
+        </GridLayout>
+        
+    
+    </GridLayout>
+
+
+   
+
+
+    
+
+<!-- </StackLayout>  -->
+
+
 
