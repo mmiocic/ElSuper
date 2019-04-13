@@ -1,0 +1,28 @@
+Water Polo Stat Tracker/ANALytics App 
+	NOTES TRACKER
+	
+	
+
+Important Items but not necessary ATM:
+	-Name of the App
+	-Color Scheme
+	-Logo
+	-Copyright/Liscensing?
+	
+	
+Task Queue: (next things to add to app, preferably in this order)
+	-Put page tabs for navigation and template of Team page, Analytics page and maybe one more
+	-Add some Database structure (SQLite)
+	-Put the other services
+	-Implement methods to save data to DB from UI
+	
+	
+Other Notes: (put any other ideas or whatever to consider)
+	-I think a snapchat-like navigation is simple and could be more relavant since we dont have that many main pages
+	-Within main pages, put some other navigation such as going to the stat tracker for games
+	-Scoresheet page will include all the settings to put for each game
+	-Scoresheet page will be default loaded and have like a news feeed of games to be loaded
+	-Team editor self-explanitory: add,remove,edit players and teams that coaches have
+	-ANALytics we need to decided on some data to be calculated once we are able to save data
+	
+	-Need to figure out a way to get the app to Tucker/Hunter without publishing to App Store so they can test it out and give comments
